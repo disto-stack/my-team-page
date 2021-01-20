@@ -29,6 +29,7 @@ p {
 
 section.members {
     display: grid;
+    justify-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 40px 1fr 40px 40px 1fr 40px 40px 1fr 40px; 
     grid-template-areas:
@@ -100,6 +101,21 @@ footer.app-footer {
     font-weight: 600;
     color: #A9A9A9;
 }
+@media screen and (min-width: 576px) {
+    section.members {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 40px 1fr 40px 40px 1fr 40px; 
+        grid-template-areas:
+            "member1      .     member3"
+            "member1   member2  member3"
+            "   .      member2     .   "
+            "member4      .     member6"
+            "member4   member5  member6"
+            "   .      member5     .   ";
+    }
+
+ }
 
 @media screen and (min-width: 768px) {
     body {
@@ -113,31 +129,11 @@ footer.app-footer {
     section.description {
         padding-bottom: 50px;
     }
-
-    section.members {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 40px 1fr 40px 40px 1fr 40px; 
-        grid-template-areas:
-            "member1      .     member3"
-            "member1   member2  member3"
-            "   .      member2     .   "
-            "member4      .     member6"
-            "member4   member5  member6"
-            "   .      member5     .   ";
-    }
-    
 }
 
-@media screen and (min-width: 1024px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;    
-    }
-
+@media screen and (min-width: 992PX) {
     main.container {
-        width: 70%;
+        padding-top: 80px;
     }
 
     div.title-flex {
@@ -157,22 +153,19 @@ footer.app-footer {
     div.title-flex p {
         flex: 1 0 40%;
     }
+
+    img {
+        width: 238px;
+    }
 }
 
-@media screen and (min-width: 1280px) {
-    body {
-        justify-content: space-between;
-    }
-
+@media screen and (min-width: 1200px) {
     main.container {
+        padding-top: 40px;
         width: 60%;
     }
 
     footer.app-footer {
         padding-bottom: 10px;
-    }
-
-    img {
-        width: 238px;
     }
 }
